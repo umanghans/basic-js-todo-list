@@ -2,15 +2,15 @@ var button = document.getElementById("enter");
 var input = document.getElementById("userinput");
 var ul = document.querySelector("ul");
 var lis = document.querySelectorAll("li");
-var delbtns = document.getElementsByClassName("delete");
+var delbtns = document.querySelectorAll(".delete");
 
 function inputLength(){
 	return input.value.length;
 }
 
-for(var i = 0; i < delbtns.length; i++){
-	delbtns[i].addEventListener("click", removeParent);
-}
+delbtns.forEach(function(i){
+	i.addEventListener("click", removeParent);
+});
 
 function removeParent(evt) {
   evt.target.removeEventListener("click", removeParent);
